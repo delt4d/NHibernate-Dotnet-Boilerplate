@@ -1,0 +1,44 @@
+﻿version: '3.8'
+
+volumes:
+  sqlserver_data:
+    
+services:
+    sqlserver:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        environment:
+            SA_PASSWORD: "SqlPassword19!"
+            ACCEPT_EULA: "Y"
+            MSSQL_PID: "Developer"
+        ports:
+            - "1433:1433"
+        volumes:
+            - sqlserver_data:/var/opt/mssql
+        healthcheck:
+          test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P SqlPassword19! -Q 'SELECT 1' || exit 1"]
+          interval: 10s
+          retries: 10
+          start_period: 10s
+          timeout: 3s
+    mssqltools:
+        image: mcr.microsoft.com/mssql-tools
+        depends_on:
+            sqlserver:
+                condition: service_healthy
+        volumes:
+            - ./initialize.sql:/docker-entrypoint-init/initialize.sql
+        command: >
+            bash -c '/opt/mssql-tools/bin/sqlcmd -S sqlserver -U sa -P SqlPassword19! -i /docker-entrypoint-init/initialize.sql'
+    adminer:
+        image: adminer
+        ports:
+          - "8282:8080"
+        environment:
+            ADMINER_DESIGN: hydra
+            ADMINER_DEFAULT_SERVER: sqlserver
+            ADMINER_DEFAULT_USER: sqluser
+            ADMINER_DEFAULT_PASSWORD: 1234
+            ADMINER_DEFAULT_TYPE: mssql
+            ADMINER_DEFAULT_DB: example
+        depends_on:
+          - sqlserver

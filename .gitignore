@@ -3,6 +3,7 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 obj/
+bin/
 .vs/
 
 # User-specific files

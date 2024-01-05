@@ -1,0 +1,12 @@
+﻿CREATE DATABASE example;
+GO
+USE example;
+IF NOT EXISTS (SELECT * FROM sys.sql_logins WHERE name = 'sqluser')
+BEGIN
+	CREATE LOGIN [sqluser] WITH PASSWORD='1234',
+		DEFAULT_DATABASE=example,
+		CHECK_EXPIRATION=OFF, 
+		CHECK_POLICY=OFF
+	ALTER SERVER ROLE [sysadmin] ADD MEMBER [sqluser]
+END
+GO

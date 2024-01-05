@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NDB.Domain.Values;
+using System;
 
 namespace NDB.Domain.Entities
 {
@@ -7,7 +8,7 @@ namespace NDB.Domain.Entities
         int Id { get; set; }
         string UUID { get; set; }
         string Title { get; set; }
-        string Content { get; set; }
+        ExampleContent Content { get; set; }
         DateTime CreatedAt { get; set; }
         DateTime? UpdatedAt { get; set; }
     }
@@ -17,7 +18,7 @@ namespace NDB.Domain.Entities
         public int Id { get; set; }
         public string UUID { get; set; }
         public string Title { get; set; }
-        public string Content { get; set; }
+        public ExampleContent Content { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
     }

@@ -1,0 +1,1 @@
+bash services-up.sh

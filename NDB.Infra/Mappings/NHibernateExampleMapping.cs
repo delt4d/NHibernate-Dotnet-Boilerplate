@@ -27,16 +27,10 @@
 
             Map(c => c.CreatedAt)
                 .Not.Nullable()
-                .Default("GETDATE()")
                 .Column("CreatedAt");
 
             Map(c => c.UpdatedAt)
                 .Column("UpdatedAt");
-
-            Map(c => c.Search)
-                .CustomSqlType("TEXT")
-                .Formula("Title + Content")
-                .Column("Search");
 
             Table("Example");
         }

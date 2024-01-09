@@ -2,10 +2,20 @@
 
 namespace NDB.Domain.Values
 {
-    public record ExampleContent(string Value)
+    public record ExampleContent
     {
+        public string Value { get; set; }
         private const int MaxLength = 255;
         
+        public ExampleContent()
+        {
+        }
+
+        public ExampleContent(string value)
+        {
+            Value = value;
+        }
+
         public void Validate()
         {
             if (Value.Length == 0)

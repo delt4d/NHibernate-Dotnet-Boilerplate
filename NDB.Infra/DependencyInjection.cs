@@ -8,7 +8,7 @@ namespace NDB.Infra
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
-            services.AddSingleton(!UnitTestingDetector.IsRunningInUnitTest ? GetSqlServerSessionFactory() : GetInMemorySessionFactory());
+            services.AddSingleton(!UnitTesting.IsRunningInUnitTest ? GetSqlServerSessionFactory() : GetInMemorySessionFactory());
             services.AddScoped(provider => provider.GetService<ISessionFactory?>()!.OpenSession());
             return services;
         }

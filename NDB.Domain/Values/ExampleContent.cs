@@ -18,7 +18,7 @@ namespace NDB.Domain.Values
 
         public void Validate()
         {
-            if (Value.Length == 0)
+            if (string.IsNullOrEmpty(Value))
             {
                 throw new ArgumentException("Content cannot be empty", nameof(Value));
             }

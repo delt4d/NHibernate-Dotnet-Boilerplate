@@ -16,4 +16,8 @@
     <ProjectReference Include="..\NDB.Domain\NDB.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistence\" />
+  </ItemGroup>
+
 </Project>

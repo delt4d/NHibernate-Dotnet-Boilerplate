@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDB.Domain", "NDB.Domain\NDB.Domain.csproj", "{B789DE3E-9A7B-4D49-88EA-8C037EF4D1BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NDB.Domain", "NDB.Domain\NDB.Domain.csproj", "{B789DE3E-9A7B-4D49-88EA-8C037EF4D1BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDB.Infra", "NDB.Infra\NDB.Infra.csproj", "{B3923DF0-9424-4253-9C97-634BDD6D539F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NDB.Infra", "NDB.Infra\NDB.Infra.csproj", "{B3923DF0-9424-4253-9C97-634BDD6D539F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDB.Tests", "NDB.Tests\NDB.Tests.csproj", "{0957B54C-D032-476D-AD9F-58D5AB749464}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B3923DF0-9424-4253-9C97-634BDD6D539F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3923DF0-9424-4253-9C97-634BDD6D539F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3923DF0-9424-4253-9C97-634BDD6D539F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0957B54C-D032-476D-AD9F-58D5AB749464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0957B54C-D032-476D-AD9F-58D5AB749464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0957B54C-D032-476D-AD9F-58D5AB749464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0957B54C-D032-476D-AD9F-58D5AB749464}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

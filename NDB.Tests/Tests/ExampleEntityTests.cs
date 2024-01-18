@@ -9,28 +9,34 @@ namespace NDB.Tests
         {
         }
 
-        //[Test]
-        //public void ExpectDoesNotThrowException()
-        //{
-        //    for (var i = 0; i < 100; i++)
-        //    {
-        //        var exampleEntity = CreateExampleEntityFactory.Generate();
-        //        Assert.DoesNotThrow(() => exampleEntity.Validate());
-        //    }
-        //}
+        [Test]
+        public void ExpectDoesNotThrowException()
+        {
+            for (var i = 0; i < 100; i++)
+            {
+                var exampleEntity = CreateExampleEntityFactory.Generate((m) =>
+                {
+                    m.UpdatedAt = null;
+                    return m;
+                });
+                Assert.DoesNotThrow(() => exampleEntity.Validate());
+            }
+        }
 
         [Test]
         public void ExpectThrowsInvalidTitleException()
         {
             Example exampleEntity;
 
-            exampleEntity = CreateExampleEntityFactory.Generate((m) => {
+            exampleEntity = CreateExampleEntityFactory.Generate((m) =>
+            {
                 m.Title = null;
                 return m;
             });
             Assert.Throws<Exception>(() => exampleEntity.Validate());
 
-            exampleEntity = CreateExampleEntityFactory.Generate((m) => {
+            exampleEntity = CreateExampleEntityFactory.Generate((m) =>
+            {
                 m.Title = "";
                 return m;
             });
@@ -42,13 +48,15 @@ namespace NDB.Tests
         {
             Example exampleEntity;
 
-            exampleEntity = CreateExampleEntityFactory.Generate((m) => {
+            exampleEntity = CreateExampleEntityFactory.Generate((m) =>
+            {
                 m.Content = null;
                 return m;
             });
             Assert.Throws<Exception>(() => exampleEntity.Validate());
 
-            exampleEntity = CreateExampleEntityFactory.Generate((m) => {
+            exampleEntity = CreateExampleEntityFactory.Generate((m) =>
+            {
                 m.Content = new ExampleContent("");
                 return m;
             });
@@ -60,14 +68,16 @@ namespace NDB.Tests
         {
             Example exampleEntity;
 
-            exampleEntity = CreateExampleEntityFactory.Generate((m) => {
+            exampleEntity = CreateExampleEntityFactory.Generate((m) =>
+            {
                 m.Id = 0;
                 m.CreatedAt = DateTime.MinValue;
                 return m;
             });
             Assert.Throws<Exception>(() => exampleEntity.Validate());
 
-            exampleEntity = CreateExampleEntityFactory.Generate((m) => {
+            exampleEntity = CreateExampleEntityFactory.Generate((m) =>
+            {
                 m.UpdatedAt = DateTime.UtcNow;
                 return m;
             });

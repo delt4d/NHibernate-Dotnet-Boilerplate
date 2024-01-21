@@ -1,5 +1,10 @@
 ﻿global using NDB.Domain.Entities;
+global using NDB.Domain.Repositories;
 global using NDB.Infra.Entities;
-global using NHibernate;
+global using NDB.Infra.Persistence;
 global using FluentNHibernate.Mapping;
+global using NHibernate;
+global using NDB.Infra.Entities;
+global using NDB.Infra.Mappings;
+global using NDB.Infra.Providers;
 global using NHibernate.Tool.hbm2ddl;

@@ -1,4 +1,5 @@
 ﻿CREATE DATABASE example;
+CREATE DATABASE test;
 GO
 USE example;
 IF NOT EXISTS (SELECT * FROM sys.sql_logins WHERE name = 'sqluser')

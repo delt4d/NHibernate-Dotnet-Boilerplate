@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="FluentNHibernate" Version="3.3.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     <PackageReference Include="NHibernate" Version="5.5.0" />
@@ -14,10 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NDB.Domain\NDB.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Persistence\" />
   </ItemGroup>
 
 </Project>

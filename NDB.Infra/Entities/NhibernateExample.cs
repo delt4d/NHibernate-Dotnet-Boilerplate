@@ -2,7 +2,7 @@
 
 namespace NDB.Infra.Entities
 {
-    public class NhibernateExample : IExample
+    public class NHibernateExample : IExample
     {
         public virtual int Id { get; set; }
         public virtual string UUID { get; set; }

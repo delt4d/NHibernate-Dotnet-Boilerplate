@@ -1,6 +1,6 @@
 ﻿namespace NDB.Infra.Mappings
 {
-    public class NHibernateExampleMapping : ClassMap<NhibernateExample>
+    public class NHibernateExampleMapping : ClassMap<NHibernateExample>
     {
         public NHibernateExampleMapping()
         {

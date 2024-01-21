@@ -1,6 +1,6 @@
 ﻿namespace NDB.Infra.Providers
 {
-    public class UUIDProvider
+    public static class UUIDProvider
     {
         public static string GenerateUUID(string prefix)
         {

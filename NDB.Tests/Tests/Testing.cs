@@ -1,13 +1,23 @@
 ﻿namespace NDB.Tests.Tests
 {
-    public static class Testing
+    public class Testing
     {
-        static private ServiceCollection Services { get; } = new();
-
         static Testing()
         {
             UnitTesting.IsRunningInUnitTest = true;
-            Services.AddInfrastructure();
+        }
+
+        private static IServiceProvider Provider()
+        {
+            ServiceCollection services = new();
+            services.AddInfrastructure();
+            return services.BuildServiceProvider();
+        }
+
+        public static T GetRequiredService<T>()
+        {
+            var provider = Provider();
+            return provider.GetRequiredService<T>();
         }
     }
 }
